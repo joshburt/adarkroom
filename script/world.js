@@ -895,7 +895,9 @@ var World = {
 		}
 
 		for(var k in Path.outfit) {
-			$SM.add('stores["'+k+'"]', Path.outfit[k]);
+			if (Path.outfit[k] > 0){
+				$SM.add('stores["'+k+'"]', Path.outfit[k]);
+			}
 			if(World.leaveItAtHome(k)) {
 				Path.outfit[k] = 0;
 			}

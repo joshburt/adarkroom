@@ -300,7 +300,9 @@ var Path = {
 	
 	embark: function() {
 		for(var k in Path.outfit) {
-			$SM.add('stores["'+k+'"]', -Path.outfit[k]);
+			if (Path.outfit[k] > 0){
+				$SM.add('stores["'+k+'"]', -Path.outfit[k]);
+			}
 		}
 		$SM.remove('outfit');
 		World.onArrival();
